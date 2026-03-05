@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; Adds "Copy to Email Clipboard" to right-click menu for .md files
+; Uses HKCU — no admin rights required
+; Uses pythonw to avoid console flash
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.md\shell\CopyToEmail]
+@="Copy to Email Clipboard"
+
+[HKEY_CURRENT_USER\Software\Classes\SystemFileAssociations\.md\shell\CopyToEmail\command]
+@="\"C:\\Python313\\pythonw.exe\" \"D:\\dev\\tool-md2email\\md2email.py\" \"%1\""
